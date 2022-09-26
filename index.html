@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Esto es para hacer formar los comandos de K8S</h4>
+    <div class="inputs">
+        <p>Pod Name</p>
+        <input class="pod-name" type="text" autocomplete="off">
+        <p>Namespace</p>
+        <input class="namespace" type="text" autocomplete="off">
+    </div>
+
+    <h2>Comandos</h2>
+    <!-- Listar los namespace -->
+    <!-- <p>Listar los namespace</p> -->
+    <devsite-code>
+        <!-- <div class="devsite-code-buttons-container">
+            <button>copiar</button>
+        </div> -->
+        <pre class="devsite-terminal">
+kubectl get pod -A | grep <devsite-var class="devsite-var-pod-name" id="POD_NAME" scope="POD_NAME"></devsite-var>
+kubectl get ns
+kubectl get pods -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var> | grep <devsite-var class="devsite-var-pod-name" id="POD_NAME" scope="POD_NAME"></devsite-var>
+
+kubectl get nodes -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get events --sort-by=.metadata.creationTimestamp -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"> | grep Warning</devsite-var>
+
+kubectl get all -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get hpa -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get svc -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get rs -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get gw -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get vs -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get sa -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get configmaps -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get daemonset.apps -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl get deployments.apps -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+</pre>
+    </devsite-code>
+
+    <devsite-code>
+        <pre class="devsite-terminal">
+kubectl describe pod <devsite-var class="devsite-var-pod-name" id="POD_NAME" scope="POD_NAME"></devsite-var> -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe hpa -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe namespace -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe svc -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe gw -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe vs -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe rs -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe daemonset.apps -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe deployments.apps -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe services -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl describe secret -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+</pre>
+    </devsite-code>
+
+    <devsite-code>
+        <pre class="devsite-terminal">
+kubectl logs <devsite-var class="devsite-var-pod-name" id="POD_NAME" scope="POD_NAME"></devsite-var> -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>     
+</pre>
+    </devsite-code>
+    
+    <devsite-code>
+        <pre class="devsite-terminal">
+kubectl top pods -n <devsite-var class="devsite-var-namespace" scope="NAMESPACE"></devsite-var>
+kubectl top pod <devsite-var class="devsite-var-pod-name" id="POD_NAME" scope="POD_NAME"></devsite-var> --sort-by=cpu
+</pre>
+    </devsite-code>
+
+    <script src="js/main.js"></script>
+    <script src="js/devsite-var.js"></script>
+</body>
+
+</html
